@@ -7,8 +7,8 @@ const MY_COOKIE: &str = include_str!("my.cookie");
 fn main() {
     let t_start = Instant::now();
 
-    let input = // Grabs from web if
-        get_input_from_web_or_cache(              // it's the first run
+    let input =
+        get_input_from_web_or_cache(
             "https://adventofcode.com/2022/day/1/input", 
             MY_COOKIE
     ).unwrap();
