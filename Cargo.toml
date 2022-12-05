@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+  "day_1",
+  "day_2",
+]
+
+[workspace.dependencies]
+aoc-cache = "0.1.3"
