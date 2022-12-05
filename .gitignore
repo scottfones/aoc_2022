@@ -1,4 +1,5 @@
 target
+my.cookie
 perf.data.old
 perf.data
 flamegraph.svg
