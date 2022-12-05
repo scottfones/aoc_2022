@@ -1,5 +1,6 @@
-use aoc_cache::get_input_from_web_or_cache;
 use std::time::Instant;
+
+use aoc_cache::get_input_from_web_or_cache;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
 
@@ -23,7 +24,7 @@ fn main() {
 
     println!("Part One: {max_value}");
 
-    let mut sorted: Vec<u32> = input 
+    let mut sorted: Vec<u32> = input
         .split("\n\n")
         .map(|x| {
             x.split('\n')
