@@ -3,6 +3,7 @@ use std::str::FromStr;
 use std::time::Instant;
 
 use aoc_cache::get_input_from_web_or_cache;
+use rayon::prelude::*;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
 
@@ -49,6 +50,7 @@ fn main() {
         .unwrap();
 
     let p1_score: u32 = input
+        // .par_lines()
         .lines()
         .map(|line| {
             let hands: Vec<Hand> = line
