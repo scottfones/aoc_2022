@@ -1,9 +1,9 @@
 [workspace]
+members = ["day_1", "day_2"]
 
-members = [
-  "day_1",
-  "day_2",
-]
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
 
 [workspace.dependencies]
 aoc-cache = "0.1"
