@@ -3,7 +3,7 @@ use std::str::FromStr;
 use std::time::Instant;
 
 use aoc_cache::get_input_from_web_or_cache;
-use rayon::prelude::*;
+// use rayon::prelude::*;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
 
