@@ -7,4 +7,3 @@ edition.workspace = true
 
 [dependencies]
 aoc-cache = { workspace = true }
-rayon = { workspace = true }
