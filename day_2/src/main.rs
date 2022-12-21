@@ -2,7 +2,7 @@ use std::cmp::Ordering;
 use std::str::FromStr;
 use std::time::Instant;
 
-use aoc_cache::get_input_from_web_or_cache;
+use aoc_cache::get;
 // use rayon::prelude::*;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
@@ -66,7 +66,7 @@ impl FromStr for Outcome {
 fn main() {
     let t_start = Instant::now();
 
-    let input = get_input_from_web_or_cache("https://adventofcode.com/2022/day/2/input", MY_COOKIE)
+    let input = get("https://adventofcode.com/2022/day/2/input", MY_COOKIE)
         .unwrap();
 
     let p1_score: u32 = input

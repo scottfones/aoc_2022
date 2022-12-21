@@ -1,17 +1,13 @@
 use std::time::Instant;
 
-use aoc_cache::get_input_from_web_or_cache;
+use aoc_cache::get;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
 
 fn main() {
     let t_start = Instant::now();
 
-    let input =
-        get_input_from_web_or_cache(
-            "https://adventofcode.com/2022/day/1/input", 
-            MY_COOKIE
-    ).unwrap();
+    let input = get("https://adventofcode.com/2022/day/1/input", MY_COOKIE).unwrap();
 
     let max_value = input
         .split("\n\n")

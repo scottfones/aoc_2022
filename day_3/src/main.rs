@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::time::Instant;
 
-use aoc_cache::get_input_from_web_or_cache;
+use aoc_cache::get;
 
 const MY_COOKIE: &str = include_str!("my.cookie");
 
@@ -18,7 +18,7 @@ fn main() {
 
     let value_map = create_value_map();
 
-    let input = get_input_from_web_or_cache("https://adventofcode.com/2022/day/3/input", MY_COOKIE)
+    let input = get("https://adventofcode.com/2022/day/3/input", MY_COOKIE)
         .unwrap();
 
     let p1_total: usize = input
