@@ -38,7 +38,7 @@ fn main() {
 }
 
 fn part_one(input: &str) -> usize {
-    let p1_total: Vec<&str> = input.lines().filter(|&line| {
+    input.lines().filter(|&line| {
         let ranges: Vec<RangeInclusive<u16>> = line.split(',').collect::<Vec<&str>>().iter().map(|&assn| {
             let nums: Vec<&str> = assn.split('-').collect();
             let start = nums[0].parse::<u16>().unwrap();
@@ -46,12 +46,11 @@ fn part_one(input: &str) -> usize {
             start..=end
         }).collect();
         range_contains(&ranges[0], &ranges[1])
-    }).collect();
-    p1_total.len()
+    }).count()
 }
 
 fn part_two(input: &str) -> usize {
-    let p2_total: Vec<&str> = input.lines().filter(|&line| {
+    input.lines().filter(|&line| {
         let ranges: Vec<RangeInclusive<u16>> = line.split(',').collect::<Vec<&str>>().iter().map(|&assn| {
             let nums: Vec<&str> = assn.split('-').collect();
             let start = nums[0].parse::<u16>().unwrap();
@@ -59,8 +58,7 @@ fn part_two(input: &str) -> usize {
             start..=end
         }).collect();
         range_intersects(&ranges[0], &ranges[1])
-    }).collect();
-    p2_total.len()
+    }).count()
 }
 
 #[cfg(test)]
