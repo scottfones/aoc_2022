@@ -5,7 +5,7 @@ use std::time::Instant;
 use aoc_cache::get;
 // use rayon::prelude::*;
 
-const MY_COOKIE: &str = include_str!("my.cookie");
+const MY_COOKIE: &str = include_str!("../../my.cookie");
 
 #[derive(Clone, Copy, PartialEq)]
 enum Hand {

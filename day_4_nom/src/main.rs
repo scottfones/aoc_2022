@@ -9,7 +9,7 @@ use nom::multi::separated_list1;
 use nom::sequence::separated_pair;
 use nom::IResult;
 
-const MY_COOKIE: &str = include_str!("my.cookie");
+const MY_COOKIE: &str = include_str!("../../my.cookie");
 
 /// Nom parsing taken from Chris Biscardi
 /// https://github.com/ChristopherBiscardi/advent-of-code/blob/main/2022/rust/day-04/src/lib.rs
@@ -85,7 +85,7 @@ fn part_two(input: &str) -> usize {
 mod tests {
     use super::*;
 
-    const MY_COOKIE: &str = include_str!("my.cookie");
+    const MY_COOKIE: &str = include_str!("../../my.cookie");
     const SAMPLE_INPUT: &str = "2-4,6-8\n\
                                 2-3,4-5\n\
                                 5-7,7-9\n\

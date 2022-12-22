@@ -3,7 +3,7 @@ use std::time::Instant;
 
 use aoc_cache::get;
 
-const MY_COOKIE: &str = include_str!("my.cookie");
+const MY_COOKIE: &str = include_str!("../../my.cookie");
 
 fn create_value_map() -> HashMap<char, usize> {
     ('a'..='z')
