@@ -6,6 +6,8 @@ use aoc_cache::get;
 
 const MY_COOKIE: &str = include_str!("../../my.cookie");
 
+/// Bit offset approach from Amos (fasterthanlime)
+/// https://fasterthanli.me/series/advent-of-code-2022/part-6
 trait GetBitOffset {
     fn get_bit_offset(&self) -> u32;
 }
@@ -54,15 +56,14 @@ fn part_one(input: &str) -> Option<u32> {
 }
 
 fn part_two(input: &str) -> Option<u32> {
-    let input_iter = input.as_bytes().iter();
-    let mut priors: VecDeque<u32> = input_iter
-        .clone()
-        .take(13)
-        .map(|c| c.get_bit_offset())
+    let mut input_iter = input.as_bytes().iter();
+
+    let mut priors: VecDeque<u32> = (0..13)
+        .map(|_| input_iter.next().unwrap().get_bit_offset())
         .collect();
 
     let mut index = 14;
-    for val in input_iter.skip(13) {
+    for val in input_iter {
         let new_bits = val.get_bit_offset();
         priors.push_front(new_bits);
         let comp = priors.iter().fold(0, |acc, b| acc | b);
