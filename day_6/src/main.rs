@@ -1,4 +1,3 @@
-use std::collections::VecDeque;
 use std::str;
 use std::time::Instant;
 
@@ -56,25 +55,18 @@ fn part_one(input: &str) -> Option<u32> {
 }
 
 fn part_two(input: &str) -> Option<u32> {
-    let mut input_iter = input.as_bytes().iter();
-
-    let mut priors: VecDeque<u32> = (0..13)
-        .map(|_| input_iter.next().unwrap().get_bit_offset())
-        .collect();
-
-    let mut index = 14;
-    for val in input_iter {
-        let new_bits = val.get_bit_offset();
-        priors.push_front(new_bits);
-        let comp = priors.iter().fold(0, |acc, b| acc | b);
-        if comp.count_ones() == 14 {
-            return Some(index);
-        }
-
-        priors.pop_back();
-        index += 1;
-    }
-    None
+    input
+        .as_bytes()
+        .windows(14)
+        .position(|window| {
+            window
+                .iter()
+                .map(|c| c.get_bit_offset())
+                .fold(0, |acc, x| acc | x)
+                .count_ones()
+                == 14
+        })
+        .map(|idx| (idx + 14) as u32)
 }
 
 #[cfg(test)]
